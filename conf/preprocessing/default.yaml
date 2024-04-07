@@ -1,0 +1,4 @@
+numerical_columns: ["0_linkedin_connections", "0_job_start_date"]
+ordinal_columns: ["0_inferred_salary"]
+ordinal_categories: ["<20,000", "20,000-25,000", "25,000-35,000", "35,000-45,000", "45,000-55,000", "55,000-70,000", "70,000-85,000", "85,000-100,000", "100,000-150,000", "150,000-250,000", ">250,000"]
+one_hot_columns: ["0_industry", "0_job_company_industry"]

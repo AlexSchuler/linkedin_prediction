@@ -1,0 +1,2 @@
+classifier:
+  _target_: torch.nn.BCELoss

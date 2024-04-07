@@ -1,0 +1,4 @@
+path: ${hydra:runtime.cwd}/data/train_data/
+save_path: ${hydra:runtime.cwd}/data/saved_models/
+constraint_file: ${hydra:runtime.cwd}/data/constraints/constraints.txt
+file_pattern: parquet

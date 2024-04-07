@@ -1,0 +1,8 @@
+classifier:
+  input_dim: 7977
+  output_dim: 5
+  hidden_layers: 5
+  hidden_dim: 6000
+  dropout_probability: 0.3
+  activation_func: {'_target_':torch.nn.LeakyReLU}
+  norm: {'_target_':torch.nn.BatchNorm1d}

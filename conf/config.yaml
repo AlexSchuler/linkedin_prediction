@@ -1,0 +1,10 @@
+defaults:
+  - paths: default
+  - experiments: default
+  - preprocessing: default
+  - reproducibility: default
+  - cross_validation: default
+  - criterion: default
+  - models: default
+  - optimizer: default
+  - scheduler: default
