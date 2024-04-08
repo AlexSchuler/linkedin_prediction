@@ -338,13 +338,13 @@ Let y be the label vector `<left year 1, left year 2, left year 3, left year 4, 
 
 There exist two possible constraint sets $\pi_0$ and $\pi_1$ with $\pi_0 \subset \pi_1$.
 
-$\pi_0 = \{\text{left year i+1} \impliedby \text{left year i} \mid \text{i} \in \{1,2,3\}  \} \ \cup \{\text{stayed at company} \impliedby \neg \ \text{left in year i} \mid \ \text{i} \in \{1,2,3\} \}$  
+$\pi_0 = \set{\text{left year i+1} \impliedby \text{left year i} \mid \text{i} \in \{1,2,3\}  } \ \cup \set{\text{stayed at company} \impliedby \neg \ \text{left in year i} \mid \ \text{i} \in \{1,2,3\} }$  
 
 $\pi_1 = \pi_0 \cup \theta_0 \cup \theta_1$
 
-$\theta_0 = \{\text{left year i+1} \impliedby \bigcup_{i<i+1} \text{left year i} \}$
+$\theta_0 = \set{\text{left year i+1} \impliedby \bigcup_{i \le i} \text{left year i} }$
 
-$\theta_1 = \{\text{stayed at company} \impliedby \bigcup_{i} \neg \ \text{left year i} \mid \forall \ i<5 \}$
+$\theta_1 = \set{ \text{stayed at company} \impliedby \bigcup_{i} \neg \ \text{left year i} \mid \forall \ i \le 4}$
 
 Which constraint set is appropriate will be determined after the ablation study.
 
