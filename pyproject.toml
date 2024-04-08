@@ -1,0 +1,124 @@
+[project]
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+name = 'linkedin_prediction'
+version = '0.0.1'
+readme = 'README.md'
+requires-python = '>=3.9,<4.0'
+license = {file = 'LICENSE'}
+authors = [
+    {name = 'Alexander Schuler', email = 'alex.r.schuler@gmail.com'},
+]
+dependencies = [# Optional
+    'pandas',
+    'fastparquet',
+    'pyarrow',
+    'polars',
+    'numpy',
+    'scikit-learn',
+    'transformers',
+    'iterative-stratification',
+    'hydra-core',
+    'torch',
+    'nltk',
+    'wandb',
+
+]
+
+[project.optional-dependencies]
+lint = [
+    # ruff linter checks for issues and potential bugs
+    'ruff',
+
+    # automatic sorting of imports
+    'isort',
+]
+
+[tool.ruff]
+line-length = 120
+output-format = 'full'
+
+# Rules: https://beta.ruff.rs/docs/rules
+lint.select = [
+    'E',    # pycodestyle
+    'F',    # Pyflakes
+    'W',    # Warning
+    'B',    # flake8-bugbear
+    'A',    # flake8-builtins
+    'Q',    # quote linting
+    'D',    # pydocstyle
+    'N',    # pep8-naming
+    'I',    # isort
+    'C4',   # flake8-comprehensions
+    'T10',  # flake8-debugger
+    'EM',   # flake8-errmsg
+    'COM',  # flake8-commas
+    'FBT',  # flake8-boolean-trap
+    'BLE',  # flake8-blind-except
+    'ANN',  # flake8-annotations
+    'UP',   # pyupgrade
+    'EXE',  # flake8-executable,
+    'ISC',  # flake8-implicit-str-concat
+    'LOG',  # flake8-logging
+    'G',    # flake8-logging-format
+    'PIE',  # flake8-pie
+    'T20',  # flake8-print
+    'PT',   # flake8-pytest-style
+    'RSE',  # flake8-raise
+    'RET',  # flake8-return
+    'TID',  # flake8-tidy-imports
+    'ARG',  # flake8-unused-arguments
+    'PGH',  # pygrep-hooks
+    'PLC',  # Pylint Convention
+    'PLE',  # Pylint Errors
+    'PLR',  # Pylint Refactor
+    'PLW',  # Pylint Warnings
+    'RUF',  # Ruff-specific rules
+    'FURB', # Refurb
+    'DTZ',  # flake8-datetimez
+    'ICN',  # flake8-import-conventions
+    'FA',   # flake8-future-annotations
+    'PTH',  # flake8-use-pathlib
+    'SIM',  # flake8-simplify
+    'ARG',  # flake8-gettext
+    'SLOT', # flake8-slots
+    'PERF', # Perflint
+    'NPY',  # Numpy rules
+    'PD',   # Pandas rules
+    'FLY',  # f string join
+    'TRY',  # exceptions 
+    'ERA',  # Commeted out code
+]
+
+# Files to exclude from linting
+extend-exclude = [
+    '*.pyc',
+    '__pycache__',
+]
+
+# Linting error codes to ignore
+lint.ignore = [
+    'ANN101', # Annotate self
+    'W191',   # Indentation is enforced via formatter
+    'ISC001', # disabled for formatter
+    'COM812', # disabled for formatter
+    'D213',   # multi-line-summary-second-line
+    'D203',   # one-blank-line-before-class
+
+]
+
+preview = true
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+indent-style = 'space'
+skip-magic-trailing-comma = false 
+line-ending = 'auto'
+docstring-code-format = true
+docstring-code-line-length = 60
+
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = 'double'
+inline-quotes = 'single'
+

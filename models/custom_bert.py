@@ -1,13 +1,17 @@
-from transformers import BertForSequenceClassification, BertConfig, BatchEncoding
-import torch
+from __future__ import annotations
+
 from typing import Optional
+
+import torch
+from transformers import (BatchEncoding, BertConfig,
+                          BertForSequenceClassification)
 
 
 class CustomBertModel(BertForSequenceClassification):
     def __init__(self, bert_config: Optional[BertConfig] = None) -> None:
         if not bert_config:
             bert_config = BertConfig()
-        super().__init__(config = bert_config)
+        super().__init__(config=bert_config)
 
     def forward(self, batch_encoding: BatchEncoding) -> torch.Tensor:
         # batch encoding shape of tensors [batch, 1, sequence length]

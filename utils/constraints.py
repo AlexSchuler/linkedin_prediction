@@ -1,11 +1,13 @@
 from pathlib import Path
-from typing import Tuple
+from typing import tuple
 
 import torch
 
 
-def parse_constraints(path: Path, num_classes: int, device: torch.device = torch.device('cpu'), dtype: torch.dtype = torch.float32) -> Tuple[torch.tensor, torch.tensor, torch.tensor]:
-    with (open(path, 'r') as f):
+def parse_constraints(
+    path: Path, num_classes: int, device: torch.device, dtype: torch.dtype = torch.float32
+) -> tuple[torch.tensor, torch.tensor, torch.tensor]:
+    with open(path) as f:
         positive_antecedents = []
         negative_antecedents = []
         consequents = []
@@ -24,4 +26,4 @@ def parse_constraints(path: Path, num_classes: int, device: torch.device = torch
             negative_antecedents.append(negative_antecedent)
             positive_antecedents.append(positive_antecedent)
             consequents.append(consequent)
-    return torch.stack(positive_antecedents), torch.stack(negative_antecedents),torch.stack(consequents).T
+    return torch.stack(positive_antecedents), torch.stack(negative_antecedents), torch.stack(consequents).T
